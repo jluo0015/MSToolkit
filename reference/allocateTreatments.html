@@ -153,9 +153,9 @@ correct number or proportion of subjects is allocated to each treatment. If
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    1   1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    2   2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3    3   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    4   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    5   3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    6   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    4   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    5   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    6   2</span>
 <span class="r-in"></span>
 <span class="r-in">  <span class="co"># allocate 6 subjects randomly to 3 treatment groups</span></span>
 <span class="r-in">  <span class="co">#  and present in treatment order</span></span>
@@ -163,9 +163,9 @@ correct number or proportion of subjects is allocated to each treatment. If
 <span class="r-out co"><span class="r-pr">#&gt;</span>   SUBJ TRT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    1   1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    2   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    3   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    4   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    5   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    3   2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    4   3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    5   3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6    6   3</span>
 <span class="r-in"></span>
 <span class="r-in">  <span class="co"># allocate 2 subjects to group 1, 2 to group 2, 3 to group 3</span></span>
@@ -184,13 +184,14 @@ correct number or proportion of subjects is allocated to each treatment. If
 <span class="r-in">  <span class="co"># 6 subjects to allocate in total in 2 groups</span></span>
 <span class="r-in">  <span class="co"># 20% will be in group 1, 80% will be in group 2</span></span>
 <span class="r-in">  <span class="fu">allocateTreatments</span><span class="op">(</span>trts <span class="op">=</span> <span class="fl">2</span>, subjects <span class="op">=</span> <span class="fl">6</span>, prop <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.8</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Not all the treatments have been allocated</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   SUBJ TRT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    1   2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    2   2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3    3   2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4    4   2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5    5   2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    6   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    6   2</span>
 <span class="r-in"></span>
 <span class="r-in">  <span class="co"># allocation according to proportions</span></span>
 <span class="r-in">  <span class="co"># 6 subjects to allocate in total in 2 groups</span></span>
@@ -202,7 +203,7 @@ correct number or proportion of subjects is allocated to each treatment. If
 <span class="r-in">                     ordered <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   SUBJ TRT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    1   1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    2   1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    2   2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3    3   2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4    4   2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5    5   2</span>
