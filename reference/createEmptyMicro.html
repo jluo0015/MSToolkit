@@ -68,11 +68,11 @@ frame that has its column names and dose column name given by arguments.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">createEmptyMicro</span><span class="op">(</span>
-  <span class="va">doses</span>,
-  doseCol <span class="op">=</span> <span class="st">"DOSE"</span>,
-  microColumnNames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>doseName <span class="op">=</span> <span class="va">doseCol</span>, <span class="st">"MEAN"</span>, <span class="st">"SE"</span>, <span class="st">"LOWER"</span>, <span class="st">"UPPER"</span>, <span class="st">"N"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">createEmptyMicro</span><span class="op">(</span></span>
+<span>  <span class="va">doses</span>,</span>
+<span>  doseCol <span class="op">=</span> <span class="st">"DOSE"</span>,</span>
+<span>  microColumnNames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>doseName <span class="op">=</span> <span class="va">doseCol</span>, <span class="st">"MEAN"</span>, <span class="st">"SE"</span>, <span class="st">"LOWER"</span>, <span class="st">"UPPER"</span>, <span class="st">"N"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -127,19 +127,19 @@ MicroEvaluation dataset allowing a more free structure for this dataset.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in">  <span class="fu">createEmptyMicro</span><span class="op">(</span>doses <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">20</span> ,<span class="fl">30</span>, <span class="fl">40</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu">createEmptyMicro</span><span class="op">(</span>doses <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">20</span> ,<span class="fl">30</span>, <span class="fl">40</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   DOSE MEAN SE LOWER UPPER  N</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   10   NA NA    NA    NA NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2   20   NA NA    NA    NA NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3   30   NA NA    NA    NA NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4   40   NA NA    NA    NA NA</span>
-<span class="r-in">  <span class="fu">createEmptyMicro</span><span class="op">(</span>doses <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">25</span><span class="op">)</span>, doseCol <span class="op">=</span> <span class="st">"D"</span>, microColumnNames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"D"</span>, <span class="st">"MEAN"</span>, <span class="st">"SE"</span>,</span>
-<span class="r-in">  <span class="st">"LOWER"</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="fu">createEmptyMicro</span><span class="op">(</span>doses <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">25</span><span class="op">)</span>, doseCol <span class="op">=</span> <span class="st">"D"</span>, microColumnNames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"D"</span>, <span class="st">"MEAN"</span>, <span class="st">"SE"</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"LOWER"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    D MEAN SE LOWER</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  5   NA NA    NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 25   NA NA    NA</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -151,7 +151,7 @@ MicroEvaluation dataset allowing a more free structure for this dataset.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>

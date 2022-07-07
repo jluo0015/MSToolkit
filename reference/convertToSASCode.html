@@ -68,7 +68,7 @@ the SAS system</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">convertToSASCode</span><span class="op">(</span><span class="va">code</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">convertToSASCode</span><span class="op">(</span><span class="va">code</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -105,23 +105,23 @@ on ";" symbols and returned.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">convertToSASCode</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"X &gt; 1"</span>, <span class="st">"X &lt; 0"</span>, <span class="st">"Y &gt; 0 &amp; Y &lt; 10"</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="co">#  [1] "IF X &gt; 1 ;IF X &lt; 0 ;IF Y &gt; 0 AND Y &lt; 10 ;"</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">sasMat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"X &gt; 1"</span>, <span class="st">"X &lt; 0"</span>, <span class="st">"Y &gt; 0 &amp; Y &lt; 10"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Col1"</span>, <span class="st">"Col2"</span>, <span class="st">"Col3"</span><span class="op">)</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">sasMat</span></span>
-<span class="r-in"><span class="co">#     [,1]             [,2]   [,3]</span></span>
-<span class="r-in"><span class="co">#[1,] "X &gt; 1"          "Col1" "1"</span></span>
-<span class="r-in"><span class="co">#[2,] "X &lt; 0"          "Col2" "2"</span></span>
-<span class="r-in"><span class="co">#[3,] "Y &gt; 0 &amp; Y &lt; 10" "Col3" "3"</span></span>
-<span class="r-in"><span class="fu">convertToSASCode</span><span class="op">(</span><span class="va">sasMat</span><span class="op">)</span>   <span class="co"># Convert matrix of "data change" code</span></span>
-<span class="r-in"><span class="co"># [1] "IF X &gt; 1 THEN Col1 = 1 ;IF X &lt; 0 THEN Col2 = 2 ;IF Y &gt; 0 AND Y &lt; 10 THEN Col3 = 3 ;"</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">convertToSASCode</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"X &gt; 1"</span>, <span class="st">"X &lt; 0"</span>, <span class="st">"Y &gt; 0 &amp; Y &lt; 10"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co">#  [1] "IF X &gt; 1 ;IF X &lt; 0 ;IF Y &gt; 0 AND Y &lt; 10 ;"</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">sasMat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"X &gt; 1"</span>, <span class="st">"X &lt; 0"</span>, <span class="st">"Y &gt; 0 &amp; Y &lt; 10"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Col1"</span>, <span class="st">"Col2"</span>, <span class="st">"Col3"</span><span class="op">)</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sasMat</span></span></span>
+<span class="r-in"><span><span class="co">#     [,1]             [,2]   [,3]</span></span></span>
+<span class="r-in"><span><span class="co">#[1,] "X &gt; 1"          "Col1" "1"</span></span></span>
+<span class="r-in"><span><span class="co">#[2,] "X &lt; 0"          "Col2" "2"</span></span></span>
+<span class="r-in"><span><span class="co">#[3,] "Y &gt; 0 &amp; Y &lt; 10" "Col3" "3"</span></span></span>
+<span class="r-in"><span><span class="fu">convertToSASCode</span><span class="op">(</span><span class="va">sasMat</span><span class="op">)</span>   <span class="co"># Convert matrix of "data change" code</span></span></span>
+<span class="r-in"><span><span class="co"># [1] "IF X &gt; 1 THEN Col1 = 1 ;IF X &lt; 0 THEN Col2 = 2 ;IF Y &gt; 0 AND Y &lt; 10 THEN Col3 = 3 ;"</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -133,7 +133,7 @@ on ";" symbols and returned.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>

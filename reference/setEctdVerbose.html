@@ -68,7 +68,7 @@ messages that are written in the logfile, and the format of the date.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">setEctdVerbose</span><span class="op">(</span><span class="va">verbose</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">setEctdVerbose</span><span class="op">(</span><span class="va">verbose</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -99,22 +99,22 @@ exported) <code>.log</code> function.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="va">oldverb</span> <span class="op">&lt;-</span> <span class="fu">setEctdVerbose</span><span class="op">(</span> <span class="cn">TRUE</span> <span class="op">)</span></span>
-<span class="r-in">  <span class="va">olddf</span>   <span class="op">&lt;-</span> <span class="fu">setEctdDateFormat</span><span class="op">(</span><span class="st">"%Y"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="va">oldlf</span>   <span class="op">&lt;-</span> <span class="fu">setEctdLogFile</span><span class="op">(</span><span class="st">"mstoolkit.log"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="kw">for</span><span class="op">(</span> <span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">100</span> <span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">    <span class="fu">MSToolkit</span><span class="fu">:::</span><span class="fu">.log</span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"some message:"</span>, <span class="va">i</span><span class="op">)</span> <span class="op">)</span></span>
-<span class="r-in">  <span class="op">}</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/file.show.html" class="external-link">file.show</a></span><span class="op">(</span> <span class="fu">getEctdLogFile</span><span class="op">(</span><span class="op">)</span> <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="fu">setEctdVerbose</span>   <span class="op">(</span><span class="va">oldverb</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu">setEctdDateFormat</span><span class="op">(</span><span class="va">olddf</span>  <span class="op">)</span></span>
-<span class="r-in">  <span class="fu">setEctdLogFile</span>   <span class="op">(</span><span class="va">oldlf</span>  <span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="va">oldverb</span> <span class="op">&lt;-</span> <span class="fu">setEctdVerbose</span><span class="op">(</span> <span class="cn">TRUE</span> <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">olddf</span>   <span class="op">&lt;-</span> <span class="fu">setEctdDateFormat</span><span class="op">(</span><span class="st">"%Y"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">oldlf</span>   <span class="op">&lt;-</span> <span class="fu">setEctdLogFile</span><span class="op">(</span><span class="st">"mstoolkit.log"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="kw">for</span><span class="op">(</span> <span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">100</span> <span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>    <span class="fu">MSToolkit</span><span class="fu">:::</span><span class="fu">.log</span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"some message:"</span>, <span class="va">i</span><span class="op">)</span> <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">}</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/file.show.html" class="external-link">file.show</a></span><span class="op">(</span> <span class="fu">getEctdLogFile</span><span class="op">(</span><span class="op">)</span> <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="fu">setEctdVerbose</span>   <span class="op">(</span><span class="va">oldverb</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">setEctdDateFormat</span><span class="op">(</span><span class="va">olddf</span>  <span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">setEctdLogFile</span>   <span class="op">(</span><span class="va">oldlf</span>  <span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -126,7 +126,7 @@ exported) <code>.log</code> function.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>

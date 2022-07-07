@@ -68,85 +68,85 @@ parametes, response, missingness and interims</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">generateData</span><span class="op">(</span>
-  <span class="va">replicateN</span>,
-  subjects <span class="op">=</span> <span class="cn">NULL</span>,
-  treatSubj <span class="op">=</span> <span class="va">subjects</span>,
-  <span class="va">treatDoses</span>,
-  <span class="va">treatSeq</span>,
-  treatType <span class="op">=</span> <span class="st">"Parallel"</span>,
-  <span class="va">treatPeriod</span>,
-  <span class="va">genParNames</span>,
-  <span class="va">genParMean</span>,
-  genParVCov <span class="op">=</span> <span class="fl">0</span>,
-  <span class="va">respEqn</span>,
-  respName <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Response"</span><span class="op">)</span>,
-  <span class="va">treatProp</span>,
-  treatOrder <span class="op">=</span> <span class="cn">FALSE</span>,
-  <span class="va">conCovNames</span>,
-  <span class="va">conCovMean</span>,
-  <span class="va">conCovVCov</span>,
-  conCovCrit <span class="op">=</span> <span class="cn">NULL</span>,
-  conCovDigits <span class="op">=</span> <span class="fl">3</span>,
-  conCovMaxDraws <span class="op">=</span> <span class="fl">100</span>,
-  <span class="va">disCovNames</span>,
-  <span class="va">disCovVals</span>,
-  <span class="va">disCovProb</span>,
-  <span class="va">disCovProbArray</span>,
-  <span class="va">extCovNames</span>,
-  <span class="va">extCovFile</span>,
-  <span class="va">extCovSubset</span>,
-  <span class="va">extCovRefCol</span>,
-  extCovSameRow <span class="op">=</span> <span class="cn">TRUE</span>,
-  extCovDataId <span class="op">=</span> <span class="va">idCol</span>,
-  <span class="va">timeCovNames</span>,
-  <span class="va">timeCovMean</span>,
-  <span class="va">timeCovVCov</span>,
-  timeCovCrit <span class="op">=</span> <span class="cn">NULL</span>,
-  <span class="va">genParCrit</span>,
-  <span class="va">genParBtwNames</span>,
-  <span class="va">genParBtwMean</span>,
-  <span class="va">genParBtwVCov</span>,
-  genParErrStruc <span class="op">=</span> <span class="st">"None"</span>,
-  genParMaxDraws <span class="op">=</span> <span class="fl">100</span>,
-  genParRangeTolerance <span class="op">=</span> <span class="fl">0.5</span>,
-  <span class="va">extParFile</span>,
-  <span class="va">extParNames</span>,
-  <span class="va">extParBtwNames</span>,
-  <span class="va">extParBtwNums</span>,
-  extParSubset <span class="op">=</span> <span class="cn">NULL</span>,
-  <span class="va">extParCrit</span>,
-  extParErrStruc <span class="op">=</span> <span class="st">"None"</span>,
-  <span class="va">extParRefColData</span>,
-  <span class="va">extParRefColName</span>,
-  extParDataId <span class="op">=</span> <span class="va">idCol</span>,
-  <span class="va">respInvLink</span>,
-  respDist <span class="op">=</span> <span class="st">"Normal"</span>,
-  <span class="va">respVCov</span>,
-  respErrStruc <span class="op">=</span> <span class="st">"Additive"</span>,
-  <span class="va">respCrit</span>,
-  respDigits <span class="op">=</span> <span class="fl">3</span>,
-  mcarProp <span class="op">=</span> <span class="fl">0</span>,
-  <span class="va">mcarRule</span>,
-  <span class="va">dropFun</span>,
-  dropFunExtraArgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,
-  <span class="va">interimSubj</span>,
-  interimMethod <span class="op">=</span> <span class="st">"Sample"</span>,
-  seed <span class="op">=</span> <span class="fu">.deriveFromMasterSeed</span><span class="op">(</span><span class="op">)</span>,
-  idCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Subject"</span><span class="op">)</span>,
-  doseCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Dose"</span><span class="op">)</span>,
-  timeCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Time"</span><span class="op">)</span>,
-  trtCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Trt"</span><span class="op">)</span>,
-  parOmitFlag <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"ParOmit"</span><span class="op">)</span>,
-  respOmitFlag <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"RespOmit"</span><span class="op">)</span>,
-  missingFlag <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Missing"</span><span class="op">)</span>,
-  interimCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Interim"</span><span class="op">)</span>,
-  parBtwSuffix <span class="op">=</span> <span class="st">".Between"</span>,
-  deleteCurrData <span class="op">=</span> <span class="cn">TRUE</span>,
-  covDiff <span class="op">=</span> <span class="cn">TRUE</span>,
-  treatDiff <span class="op">=</span> <span class="cn">TRUE</span>,
-  workingPath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">generateData</span><span class="op">(</span></span>
+<span>  <span class="va">replicateN</span>,</span>
+<span>  subjects <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  treatSubj <span class="op">=</span> <span class="va">subjects</span>,</span>
+<span>  <span class="va">treatDoses</span>,</span>
+<span>  <span class="va">treatSeq</span>,</span>
+<span>  treatType <span class="op">=</span> <span class="st">"Parallel"</span>,</span>
+<span>  <span class="va">treatPeriod</span>,</span>
+<span>  <span class="va">genParNames</span>,</span>
+<span>  <span class="va">genParMean</span>,</span>
+<span>  genParVCov <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  <span class="va">respEqn</span>,</span>
+<span>  respName <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Response"</span><span class="op">)</span>,</span>
+<span>  <span class="va">treatProp</span>,</span>
+<span>  treatOrder <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">conCovNames</span>,</span>
+<span>  <span class="va">conCovMean</span>,</span>
+<span>  <span class="va">conCovVCov</span>,</span>
+<span>  conCovCrit <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  conCovDigits <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>  conCovMaxDraws <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  <span class="va">disCovNames</span>,</span>
+<span>  <span class="va">disCovVals</span>,</span>
+<span>  <span class="va">disCovProb</span>,</span>
+<span>  <span class="va">disCovProbArray</span>,</span>
+<span>  <span class="va">extCovNames</span>,</span>
+<span>  <span class="va">extCovFile</span>,</span>
+<span>  <span class="va">extCovSubset</span>,</span>
+<span>  <span class="va">extCovRefCol</span>,</span>
+<span>  extCovSameRow <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  extCovDataId <span class="op">=</span> <span class="va">idCol</span>,</span>
+<span>  <span class="va">timeCovNames</span>,</span>
+<span>  <span class="va">timeCovMean</span>,</span>
+<span>  <span class="va">timeCovVCov</span>,</span>
+<span>  timeCovCrit <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  <span class="va">genParCrit</span>,</span>
+<span>  <span class="va">genParBtwNames</span>,</span>
+<span>  <span class="va">genParBtwMean</span>,</span>
+<span>  <span class="va">genParBtwVCov</span>,</span>
+<span>  genParErrStruc <span class="op">=</span> <span class="st">"None"</span>,</span>
+<span>  genParMaxDraws <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  genParRangeTolerance <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>  <span class="va">extParFile</span>,</span>
+<span>  <span class="va">extParNames</span>,</span>
+<span>  <span class="va">extParBtwNames</span>,</span>
+<span>  <span class="va">extParBtwNums</span>,</span>
+<span>  extParSubset <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  <span class="va">extParCrit</span>,</span>
+<span>  extParErrStruc <span class="op">=</span> <span class="st">"None"</span>,</span>
+<span>  <span class="va">extParRefColData</span>,</span>
+<span>  <span class="va">extParRefColName</span>,</span>
+<span>  extParDataId <span class="op">=</span> <span class="va">idCol</span>,</span>
+<span>  <span class="va">respInvLink</span>,</span>
+<span>  respDist <span class="op">=</span> <span class="st">"Normal"</span>,</span>
+<span>  <span class="va">respVCov</span>,</span>
+<span>  respErrStruc <span class="op">=</span> <span class="st">"Additive"</span>,</span>
+<span>  <span class="va">respCrit</span>,</span>
+<span>  respDigits <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>  mcarProp <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  <span class="va">mcarRule</span>,</span>
+<span>  <span class="va">dropFun</span>,</span>
+<span>  dropFunExtraArgs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="va">interimSubj</span>,</span>
+<span>  interimMethod <span class="op">=</span> <span class="st">"Sample"</span>,</span>
+<span>  seed <span class="op">=</span> <span class="fu">.deriveFromMasterSeed</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  idCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Subject"</span><span class="op">)</span>,</span>
+<span>  doseCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Dose"</span><span class="op">)</span>,</span>
+<span>  timeCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Time"</span><span class="op">)</span>,</span>
+<span>  trtCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Trt"</span><span class="op">)</span>,</span>
+<span>  parOmitFlag <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"ParOmit"</span><span class="op">)</span>,</span>
+<span>  respOmitFlag <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"RespOmit"</span><span class="op">)</span>,</span>
+<span>  missingFlag <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Missing"</span><span class="op">)</span>,</span>
+<span>  interimCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Interim"</span><span class="op">)</span>,</span>
+<span>  parBtwSuffix <span class="op">=</span> <span class="st">".Between"</span>,</span>
+<span>  deleteCurrData <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  covDiff <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  treatDiff <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  workingPath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -571,17 +571,17 @@ working directory.  This data can then be analyzed using a call to the
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="fu">generateData</span><span class="op">(</span> replicateN <span class="op">=</span> <span class="fl">500</span>, subjects <span class="op">=</span> <span class="fl">400</span>, treatDoses <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span>, <span class="fl">25</span>, <span class="fl">50</span>, <span class="fl">100</span><span class="op">)</span>,</span>
-<span class="r-in">  conCovNames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"wt"</span>, <span class="st">"age"</span><span class="op">)</span>, conCovMean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">83</span>, <span class="fl">55</span><span class="op">)</span> , conCovVCov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">14</span>,<span class="fl">10</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> ,</span>
-<span class="r-in">  conCovDigits <span class="op">=</span> <span class="fl">1</span>, conCovCrit <span class="op">=</span> <span class="st">"18 &lt;= age &lt;= 65"</span>,</span>
-<span class="r-in">  genParNames <span class="op">=</span> <span class="st">"E0,ED50,EMAX"</span>, genParMean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">50</span>,<span class="fl">10</span><span class="op">)</span>, genParVCov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">.5</span>,<span class="fl">30</span>,<span class="fl">10</span><span class="op">)</span> <span class="op">)</span>,</span>
-<span class="r-in">  genParBtwNames <span class="op">=</span> <span class="st">"E0,ED50,EMAX"</span>, genParBtwMean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span>, genParBtwVCov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>,</span>
-<span class="r-in">  respEqn <span class="op">=</span> <span class="st">"E0 + ((DOSE * EMAX)/(DOSE + ED50))"</span>,  respVCov <span class="op">=</span> <span class="fl">5</span>,</span>
-<span class="r-in">  interimSubj <span class="op">=</span> <span class="st">".3,.7"</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">generateData</span><span class="op">(</span> replicateN <span class="op">=</span> <span class="fl">500</span>, subjects <span class="op">=</span> <span class="fl">400</span>, treatDoses <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">5</span>, <span class="fl">25</span>, <span class="fl">50</span>, <span class="fl">100</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  conCovNames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"wt"</span>, <span class="st">"age"</span><span class="op">)</span>, conCovMean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">83</span>, <span class="fl">55</span><span class="op">)</span> , conCovVCov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">14</span>,<span class="fl">10</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> ,</span></span>
+<span class="r-in"><span>  conCovDigits <span class="op">=</span> <span class="fl">1</span>, conCovCrit <span class="op">=</span> <span class="st">"18 &lt;= age &lt;= 65"</span>,</span></span>
+<span class="r-in"><span>  genParNames <span class="op">=</span> <span class="st">"E0,ED50,EMAX"</span>, genParMean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">50</span>,<span class="fl">10</span><span class="op">)</span>, genParVCov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">.5</span>,<span class="fl">30</span>,<span class="fl">10</span><span class="op">)</span> <span class="op">)</span>,</span></span>
+<span class="r-in"><span>  genParBtwNames <span class="op">=</span> <span class="st">"E0,ED50,EMAX"</span>, genParBtwMean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span>, genParBtwVCov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  respEqn <span class="op">=</span> <span class="st">"E0 + ((DOSE * EMAX)/(DOSE + ED50))"</span>,  respVCov <span class="op">=</span> <span class="fl">5</span>,</span></span>
+<span class="r-in"><span>  interimSubj <span class="op">=</span> <span class="st">".3,.7"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -593,7 +593,7 @@ working directory.  This data can then be analyzed using a call to the
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>

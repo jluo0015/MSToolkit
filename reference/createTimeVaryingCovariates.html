@@ -68,19 +68,19 @@ distribution and (optionally) a set of constraints.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">createTimeVaryingCovariates</span><span class="op">(</span>
-  <span class="va">subjects</span>,
-  <span class="va">names</span>,
-  <span class="va">mean</span>,
-  covariance <span class="op">=</span> <span class="fl">0</span>,
-  range <span class="op">=</span> <span class="cn">NULL</span>,
-  <span class="va">digits</span>,
-  maxDraws <span class="op">=</span> <span class="fl">100</span>,
-  seed <span class="op">=</span> <span class="fu">.deriveFromMasterSeed</span><span class="op">(</span><span class="op">)</span>,
-  idCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Subject"</span><span class="op">)</span>,
-  timeCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Time"</span><span class="op">)</span>,
-  <span class="va">treatPeriod</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">createTimeVaryingCovariates</span><span class="op">(</span></span>
+<span>  <span class="va">subjects</span>,</span>
+<span>  <span class="va">names</span>,</span>
+<span>  <span class="va">mean</span>,</span>
+<span>  covariance <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  range <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  <span class="va">digits</span>,</span>
+<span>  maxDraws <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  seed <span class="op">=</span> <span class="fu">.deriveFromMasterSeed</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  idCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Subject"</span><span class="op">)</span>,</span>
+<span>  timeCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Time"</span><span class="op">)</span>,</span>
+<span>  <span class="va">treatPeriod</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -167,13 +167,13 @@ and the two other described above.</p></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"> <span class="co"># same</span></span>
-<span class="r-in"> <span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">createTimeVaryingCovariates</span><span class="op">(</span><span class="fl">10</span>, <span class="st">"X, Y, Z"</span>,</span>
-<span class="r-in">  <span class="va">mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>X <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span>, Z <span class="op">=</span> <span class="st">"2.5, 3, 3.2, 3.6"</span><span class="op">)</span>,</span>
-<span class="r-in">  covariance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">5</span>, <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">.5</span>,<span class="fl">.3</span>,<span class="fl">0</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">.5</span>,<span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">.3</span>,<span class="fl">0</span>,<span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">  range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"10&gt;=X&gt;0"</span>, <span class="cn">NULL</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Z&gt;0"</span>, <span class="st">"Z&lt;=10"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">  idCol <span class="op">=</span> <span class="st">"SUBJ"</span>, timeCol <span class="op">=</span> <span class="st">"TIME"</span>, treatPeriod <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">1</span>, <span class="fl">12</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="co"># same</span></span></span>
+<span class="r-in"><span> <span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">createTimeVaryingCovariates</span><span class="op">(</span><span class="fl">10</span>, <span class="st">"X, Y, Z"</span>,</span></span>
+<span class="r-in"><span>  <span class="va">mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>X <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span>, Z <span class="op">=</span> <span class="st">"2.5, 3, 3.2, 3.6"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  covariance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">5</span>, <span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">.5</span>,<span class="fl">.3</span>,<span class="fl">0</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">.5</span>,<span class="fl">1</span>,<span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">.3</span>,<span class="fl">0</span>,<span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"10&gt;=X&gt;0"</span>, <span class="cn">NULL</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Z&gt;0"</span>, <span class="st">"Z&lt;=10"</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  idCol <span class="op">=</span> <span class="st">"SUBJ"</span>, timeCol <span class="op">=</span> <span class="st">"TIME"</span>, treatPeriod <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">1</span>, <span class="fl">12</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -185,7 +185,7 @@ and the two other described above.</p></div>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>

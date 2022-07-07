@@ -74,24 +74,24 @@ variability).</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">createNormalParameters</span><span class="op">(</span>
-  <span class="va">subjects</span>,
-  <span class="va">names</span>,
-  <span class="va">mean</span>,
-  covariance <span class="op">=</span> <span class="fl">0</span>,
-  <span class="va">range</span>,
-  <span class="va">betNames</span>,
-  betMean <span class="op">=</span> <span class="fl">0</span>,
-  betCov <span class="op">=</span> <span class="fl">0</span>,
-  errStruc <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"None"</span>, <span class="st">"Proportional"</span>, <span class="st">"Additive"</span>, <span class="st">"Log-Normal"</span><span class="op">)</span>,
-  suffix <span class="op">=</span> <span class="st">".Between"</span>,
-  idCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Subject"</span><span class="op">)</span>,
-  maxDraws <span class="op">=</span> <span class="fl">10</span>,
-  seed <span class="op">=</span> <span class="fu">.deriveFromMasterSeed</span><span class="op">(</span><span class="op">)</span>,
-  flagName <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"ParOmit"</span><span class="op">)</span>,
-  digits <span class="op">=</span> <span class="fl">3</span>,
-  parRangeTolerance <span class="op">=</span> <span class="fl">0.5</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">createNormalParameters</span><span class="op">(</span></span>
+<span>  <span class="va">subjects</span>,</span>
+<span>  <span class="va">names</span>,</span>
+<span>  <span class="va">mean</span>,</span>
+<span>  covariance <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  <span class="va">range</span>,</span>
+<span>  <span class="va">betNames</span>,</span>
+<span>  betMean <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  betCov <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  errStruc <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"None"</span>, <span class="st">"Proportional"</span>, <span class="st">"Additive"</span>, <span class="st">"Log-Normal"</span><span class="op">)</span>,</span>
+<span>  suffix <span class="op">=</span> <span class="st">".Between"</span>,</span>
+<span>  idCol <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"Subject"</span><span class="op">)</span>,</span>
+<span>  maxDraws <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  seed <span class="op">=</span> <span class="fu">.deriveFromMasterSeed</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  flagName <span class="op">=</span> <span class="fu"><a href="getEctdColName.html">getEctdColName</a></span><span class="op">(</span><span class="st">"ParOmit"</span><span class="op">)</span>,</span>
+<span>  digits <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>  parRangeTolerance <span class="op">=</span> <span class="fl">0.5</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -224,57 +224,57 @@ was implemented as exp(fixed + between subject)</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="fu">createNormalParameters</span><span class="op">(</span><span class="fl">5</span>, <span class="st">"E0,ED50,EMAX"</span>,</span>
-<span class="r-in">                       mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">50</span>, <span class="fl">100</span><span class="op">)</span>,</span>
-<span class="r-in">                       covariance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">5</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">createNormalParameters</span><span class="op">(</span><span class="fl">5</span>, <span class="st">"E0,ED50,EMAX"</span>,</span></span>
+<span class="r-in"><span>                       mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">50</span>, <span class="fl">100</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>                       covariance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">5</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   SUBJ    E0   ED50    EMAX PAROMIT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    1 1.849 46.618 102.745       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    2 1.849 46.618 102.745       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3    3 1.849 46.618 102.745       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4    4 1.849 46.618 102.745       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5    5 1.849 46.618 102.745       0</span>
-<span class="r-in"><span class="co">#  SUBJ       E0     ED50     EMAX   PAROMIT</span></span>
-<span class="r-in"><span class="co">#1    1 -0.8356286 50.41064 98.01898       0</span></span>
-<span class="r-in"><span class="co">#2    2 -0.8356286 50.41064 98.01898       0</span></span>
-<span class="r-in"><span class="co">#3    3 -0.8356286 50.41064 98.01898       0</span></span>
-<span class="r-in"><span class="co">#4    4 -0.8356286 50.41064 98.01898       0</span></span>
-<span class="r-in"><span class="co">#5    5 -0.8356286 50.41064 98.01898       0</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">createNormalParameters</span><span class="op">(</span><span class="fl">5</span>, <span class="st">"E0,ED50,EMAX"</span>,</span>
-<span class="r-in">                       mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">50</span>, <span class="fl">100</span><span class="op">)</span>,</span>
-<span class="r-in">                       covariance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">5</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span>,</span>
-<span class="r-in">                       betNames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"E0"</span>, <span class="st">"EMAX"</span><span class="op">)</span>,</span>
-<span class="r-in">                       betCov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span>,</span>
-<span class="r-in">                       errStruc <span class="op">=</span> <span class="st">"Additive"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="co">#  SUBJ       E0     ED50     EMAX   PAROMIT</span></span></span>
+<span class="r-in"><span><span class="co">#1    1 -0.8356286 50.41064 98.01898       0</span></span></span>
+<span class="r-in"><span><span class="co">#2    2 -0.8356286 50.41064 98.01898       0</span></span></span>
+<span class="r-in"><span><span class="co">#3    3 -0.8356286 50.41064 98.01898       0</span></span></span>
+<span class="r-in"><span><span class="co">#4    4 -0.8356286 50.41064 98.01898       0</span></span></span>
+<span class="r-in"><span><span class="co">#5    5 -0.8356286 50.41064 98.01898       0</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">createNormalParameters</span><span class="op">(</span><span class="fl">5</span>, <span class="st">"E0,ED50,EMAX"</span>,</span></span>
+<span class="r-in"><span>                       mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">50</span>, <span class="fl">100</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>                       covariance <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">5</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>                       betNames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"E0"</span>, <span class="st">"EMAX"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>                       betCov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>                       errStruc <span class="op">=</span> <span class="st">"Additive"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   SUBJ     E0   ED50   EMAX PAROMIT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    1 -0.085 47.633 96.318       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    2  0.039 47.633 97.672       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3    3 -0.462 47.633 97.402       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4    4 -2.106 47.633 96.946       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5    5  0.150 47.633 97.188       0</span>
-<span class="r-in"><span class="co">#  SUBJ       E0     ED50     EMAX   PAROMIT</span></span>
-<span class="r-in"><span class="co">#1    1  0.7596522 50.41064 98.59476       0</span></span>
-<span class="r-in"><span class="co">#2    2 -0.5061208 50.41064 97.71359       0</span></span>
-<span class="r-in"><span class="co">#3    3 -1.6560970 50.41064 99.53076       0</span></span>
-<span class="r-in"><span class="co">#4    4 -0.3481996 50.41064 98.40882       0</span></span>
-<span class="r-in"><span class="co">#5    5 -0.0973039 50.41064 97.39774       0</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># no covariance by default</span></span>
-<span class="r-in"><span class="fu">createNormalParameters</span><span class="op">(</span><span class="fl">5</span>, <span class="st">"E0,ED50,EMAX"</span>, mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">50</span>, <span class="fl">100</span><span class="op">)</span> <span class="op">)</span></span>
+<span class="r-in"><span><span class="co">#  SUBJ       E0     ED50     EMAX   PAROMIT</span></span></span>
+<span class="r-in"><span><span class="co">#1    1  0.7596522 50.41064 98.59476       0</span></span></span>
+<span class="r-in"><span><span class="co">#2    2 -0.5061208 50.41064 97.71359       0</span></span></span>
+<span class="r-in"><span><span class="co">#3    3 -1.6560970 50.41064 99.53076       0</span></span></span>
+<span class="r-in"><span><span class="co">#4    4 -0.3481996 50.41064 98.40882       0</span></span></span>
+<span class="r-in"><span><span class="co">#5    5 -0.0973039 50.41064 97.39774       0</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># no covariance by default</span></span></span>
+<span class="r-in"><span><span class="fu">createNormalParameters</span><span class="op">(</span><span class="fl">5</span>, <span class="st">"E0,ED50,EMAX"</span>, mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">50</span>, <span class="fl">100</span><span class="op">)</span> <span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   SUBJ E0 ED50 EMAX PAROMIT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1    1  0   50  100       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2    2  0   50  100       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3    3  0   50  100       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4    4  0   50  100       0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5    5  0   50  100       0</span>
-<span class="r-in"><span class="co">#  SUBJ E0 ED50 EMAX PAROMIT</span></span>
-<span class="r-in"><span class="co">#1    1  0   50  100       0</span></span>
-<span class="r-in"><span class="co">#2    2  0   50  100       0</span></span>
-<span class="r-in"><span class="co">#3    3  0   50  100       0</span></span>
-<span class="r-in"><span class="co">#4    4  0   50  100       0</span></span>
-<span class="r-in"><span class="co">#5    5  0   50  100       0</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span><span class="co">#  SUBJ E0 ED50 EMAX PAROMIT</span></span></span>
+<span class="r-in"><span><span class="co">#1    1  0   50  100       0</span></span></span>
+<span class="r-in"><span><span class="co">#2    2  0   50  100       0</span></span></span>
+<span class="r-in"><span><span class="co">#3    3  0   50  100       0</span></span></span>
+<span class="r-in"><span><span class="co">#4    4  0   50  100       0</span></span></span>
+<span class="r-in"><span><span class="co">#5    5  0   50  100       0</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -286,7 +286,7 @@ was implemented as exp(fixed + between subject)</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>

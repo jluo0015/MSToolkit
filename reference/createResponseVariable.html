@@ -65,7 +65,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">createResponseVariable</span><span class="op">(</span><span class="va">data</span>, <span class="va">equation</span>, preTest <span class="op">=</span> <span class="cn">TRUE</span>, subsetSize <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">createResponseVariable</span><span class="op">(</span><span class="va">data</span>, <span class="va">equation</span>, preTest <span class="op">=</span> <span class="cn">TRUE</span>, subsetSize <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -119,21 +119,21 @@ and <code><a href="addResidualError.html">addResidualError</a></code>.</p></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in">  <span class="co"># define a data set</span></span>
-<span class="r-in">  <span class="va">myData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">1</span><span class="op">)</span>, Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="co"># added to comply with SF issue 7</span></span>
-<span class="r-in">  <span class="co"># Tue Jul 24 10:20:20 BST 2007 @430 /Internet Time/</span></span>
-<span class="r-in">  <span class="co"># function version</span></span>
-<span class="r-in">  <span class="va">out1</span> <span class="op">&lt;-</span> <span class="fu">createResponseVariable</span><span class="op">(</span>data <span class="op">=</span> <span class="va">myData</span>, equation <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">{</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">X</span> <span class="op">+</span> <span class="va">Y</span> <span class="op">+</span> <span class="va">Z</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">}</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in">  <span class="co"># same using the character version</span></span>
-<span class="r-in">  <span class="va">out2</span> <span class="op">&lt;-</span> <span class="fu">createResponseVariable</span><span class="op">(</span>data <span class="op">=</span> <span class="va">myData</span>, equation <span class="op">=</span> <span class="st">"X+Y+Z"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/identical.html" class="external-link">identical</a></span><span class="op">(</span><span class="va">out1</span>,<span class="va">out2</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="co"># define a data set</span></span></span>
+<span class="r-in"><span>  <span class="va">myData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>X <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">1</span><span class="op">)</span>, Y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>, Z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="co"># added to comply with SF issue 7</span></span></span>
+<span class="r-in"><span>  <span class="co"># Tue Jul 24 10:20:20 BST 2007 @430 /Internet Time/</span></span></span>
+<span class="r-in"><span>  <span class="co"># function version</span></span></span>
+<span class="r-in"><span>  <span class="va">out1</span> <span class="op">&lt;-</span> <span class="fu">createResponseVariable</span><span class="op">(</span>data <span class="op">=</span> <span class="va">myData</span>, equation <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">{</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">X</span> <span class="op">+</span> <span class="va">Y</span> <span class="op">+</span> <span class="va">Z</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">}</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>  <span class="co"># same using the character version</span></span></span>
+<span class="r-in"><span>  <span class="va">out2</span> <span class="op">&lt;-</span> <span class="fu">createResponseVariable</span><span class="op">(</span>data <span class="op">=</span> <span class="va">myData</span>, equation <span class="op">=</span> <span class="st">"X+Y+Z"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html" class="external-link">stopifnot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/identical.html" class="external-link">identical</a></span><span class="op">(</span><span class="va">out1</span>,<span class="va">out2</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -145,7 +145,7 @@ and <code><a href="addResidualError.html">addResidualError</a></code>.</p></div>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>
